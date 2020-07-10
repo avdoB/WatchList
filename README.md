@@ -7,3 +7,6 @@ Just put the name of the content and the date of the watching and you are set.
 Notifications on time set to watch the content.
 
 Adding of the  storage function
+
+
+# More is to come
