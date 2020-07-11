@@ -1,8 +1,9 @@
 /// movie class/representation of a movie
 class Movie{
-    constructor(content , time){
+    constructor(content , time,date){
         this.content=content;
         this.time=time;
+        this.date=date;
     }
 }
 
@@ -12,7 +13,8 @@ class UI{
         const StoredMovies=[
             {
             content:'Here  is the content displayed',
-            time: 'And here, the prefered time and date of streaming ',
+            time: 'Here the prefered time',
+            date:'And here the date',
             },
         ];
 const movies= StoredMovies
@@ -25,6 +27,7 @@ movies.forEach((movie)=> UI.addMovieToList(movie));
      row.innerHTML= `
      <td>${movie.content}</td>
      <td>${movie.time}</td>
+     <td>${movie.date}</td>
      <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
 `;
 
@@ -50,6 +53,7 @@ static showAlert(message,className){
     static clearFields(){
         document.querySelector('#cont').value='';
         document.querySelector('#direct').value='';
+        document.querySelector('#countdownDate').value='';
 
     }
 }
@@ -63,12 +67,14 @@ document.querySelector('#movie-form').addEventListener('submit', (e) => {
     
     const content=document.querySelector('#cont').value;
     const time=document.querySelector('#direct').value;
+    const date=document.querySelector('#countdownDate').value;
+
 
 //validate
-if(content === ''|| time === ''){
+if(content === ''|| time === '' || date === ''){
     UI.showAlert('please fill in all fields', 'danger');
 }else{  //init movie
-    const movie= new Movie(content,time);
+    const movie= new Movie(content,time,date);
     console.log(movie)
    
    //// movie to ui
