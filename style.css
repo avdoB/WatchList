@@ -34,20 +34,4 @@ p{
 }
 #movie-form{
     width: 50%;
-}
-
-img{  
-width: 120%;
-position: absolute;
-right: 180px;
-bottom: 400px;
-z-index: -1;
-}
-@media only screen and (max-width: 1500px) {
-  img {
-    position: absolute;
-    right: 50px;
-    bottom: 13em;
-  }
-}
 
